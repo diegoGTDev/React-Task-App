@@ -8,28 +8,38 @@ import { ToDoManager } from './models/toDo';
 import React from 'react';
 
 // const todoManager = new ToDoManager();
-
-function App() {
-  let tasksItems = localStorage.getItem('tasks');
-  let parsedTasks;
-  if (!tasksItems){
-    localStorage.setItem('tasks', JSON.stringify([]));
-    parsedTasks = [];
+function useLocalStore(itemName, initialValue) {
+  
+  let Items = localStorage.getItem(itemName);
+  let parsedItems;
+  if (!Items){
+    localStorage.setItem(itemName, JSON.stringify(initialValue));
+    parsedItems = initialValue;
   }
   else{
-    parsedTasks = JSON.parse(tasksItems);
-  
+    parsedItems = JSON.parse(Items);
   }
+
+  const [item, setItem] = React.useState(parsedItems);
+  
+    const saveItems = (items) => {
+    localStorage.setItem(itemName, JSON.stringify(items));
+    setItem(items);
+  }
+
+  return [item, saveItems];
+}
+
+function App() {
+
+  
   const [searchValue, setSearchValue] = React.useState('');
   const [newTaskValue, setTaskValue] = React.useState('')
-  const [tasks, setTasks] = React.useState(parsedTasks);
+  const [tasks, saveTasks] = useLocalStore('TASKS_V1', []);
   const completedTodos = tasks.filter(task => task.completed).length;
   const totalTodos = tasks.length;
   const searchedTodos = tasks.filter(task => task.text.toLowerCase().includes(searchValue.toLowerCase()));
-  const saveTasks = (items) => {
-    localStorage.setItem('tasks', JSON.stringify(items));
-    setTasks(items);
-  }
+
   const completeTodo = (text) =>{
     const newTodos = [...tasks];
     const todoIndex = newTodos.findIndex(task => task.text === text);
