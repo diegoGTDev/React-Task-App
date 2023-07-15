@@ -1,0 +1,19 @@
+.todo-list-container{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.todo-list{
+    padding: 0;
+    margin:auto;
+    width: 100%;
+}
+
+.todo-list-content{
+    width: 100%;
+    margin: 0 10vh;
+}

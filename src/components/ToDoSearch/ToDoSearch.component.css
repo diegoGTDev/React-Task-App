@@ -1,0 +1,30 @@
+.todo-search-input{
+    align-self: center;
+    text-align: center;
+    border-radius: 0.5rem;
+    border-style: none;
+    border-width: 0px;
+    padding: 0.25rem;
+    height: 2.5rem;
+    width: 20vh;
+    
+}
+
+.todo-search-input:focus{
+    border-width: 0px;
+    border-style: none;
+    border-color: none;
+    border-right: 0;
+    outline-color: #39aee0;
+
+}
+
+.todo-search-container{
+    margin-bottom: 2.5rem;
+}
+
+.todo-search-container div{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}

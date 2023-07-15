@@ -1,0 +1,85 @@
+.todo-button{
+    background-color: rgb(248, 248, 248);
+    width: 100%;
+    border-color: none;
+    border-width: 0;
+    cursor: pointer;
+    transition: ease-in 0.25s;
+    font-size: 2.5vh;
+    height: 5vh;
+    font: 'segoe ui';
+    font-weight: bold;
+    height: 100%;
+  }
+  
+.todo-button:hover{
+color: #fff;
+background-color: #5959f5;
+}
+.todo-input{
+    background-color: #ffffff;
+    width: auto;
+    height: 3rem;
+    outline: none;
+    border-radius: 1.2vh;
+    padding-left: 0.75vh;
+    border: 0;
+}
+.controls{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+   
+}
+.todo-new-container-content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 1vh;
+}
+.todo-new-container-content .todo-input{
+    text-align: center;
+}
+.todo-new-container{
+    visibility: hidden;
+    justify-content: center;
+    display: flexbox;
+    align-items: center;
+    background-color: rgb(215, 60, 125);
+    padding: 1vh;
+    transition: ease-in 0.25s;
+    transform:translate(3);
+ 
+}
+.todo-new-container--active{
+    visibility: visible;
+}
+
+.todo-new-container-title h1{
+    color: #ffff;
+    font: 'segoe ui';
+    font-weight: bold;
+}
+
+.todo-button-container{
+    height: 5.5vh;
+}
+
+.todo-create_button{
+    background-color: rgb(248, 248, 248);
+    width: 20%;
+    margin-left: 0.75rem;
+    border-color: none;
+    border-width: 0;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.5vh;
+    font: 'segoe ui';
+    font-weight: bold;
+    transition: ease 0.25s;
+}
+
+.todo-create_button:hover{
+    transform: scale(1.025);
+
+}
