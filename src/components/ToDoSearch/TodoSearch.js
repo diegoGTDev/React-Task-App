@@ -1,7 +1,8 @@
 import React from 'react'
 import './ToDoSearch.component.css'
-export default function TodoSearch({searchValue, setSearchValue}) {
-
+import { TaskContext } from '../../context/TaskContext';
+export default function TodoSearch() {
+  const {searchValue, setSearchValue} = React.useContext(TaskContext);
   return (
     <div className='todo-search-container'>
       <div>
